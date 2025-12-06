@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مشروع DSS</title>
+
+<style>
+:root{
+  --uni-green:#004D40;
+  --uni-green-2:#199687;
+  --border:#e0e0e0;
+  --text:#111;
+  --card:#ffffff;
+}
+
+/* reset */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Tahoma", Arial;
+  background:#fafafa;
+  color:var(--text);
+}
+
+/* header */
+.header{
+  background:var(--uni-green);
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.header img{
+  height:65px;
+}
+
+/* main tabs */
+.tabs{
+  background:var(--uni-green-2);
+  padding:10px;
+  display:flex;
+  gap:20px;
+}
+.tab{
+  background:#fff;
+  color:var(--uni-green);
+  padding:10px 30px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.tab.active{
+  background:var(--uni-green);
+  color:white;
+}
+
+.container{
+  max-width:900px;
+  margin:20px auto;
+  padding:10px;
+}
+
+section{display:none}
+section.active{display:block}
+
+/* cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
+}
+.card-title{
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+/* grid */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.kv{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px;
+}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr;}
+}
+
+/* inner tabs */
+.inner-tabs{
+  display:flex;
+  gap:12px;
+  margin-bottom:14px;
+}
+.inner-tab{
+  background:#fff;
+  color:var(--uni-green);
+  border:1px solid var(--uni-green);
+  padding:8px 22px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.inner-tab.active{
+  background:var(--uni-green);
+  color:white;
+}
+
+.dss-section{display:none;}
+.dss-section.active{display:block;}
+
+/* Matrix table */
+.matrix-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.matrix-table td, .matrix-table th{
+  border:1px solid var(--border);
+  padding:10px;
+  text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+  <img src="https://services.kfu.edu.sa/InstructorVacancy/Content/Imgs/logo.png">
+</header>
+
+<nav class="tabs container">
+  <button class="tab active" data-target="sec-dss">مشروع DSS</button>
+</nav>
+
+<main class="container">
+
+<section id="sec-dss" class="active">
+
+  <!-- inner tabs -->
+  <div class="inner-tabs">
+    <button class="inner-tab active" data-target="info">معلومات</button>
+    <button class="inner-tab" data-target="kpi">المؤشرات</button>
+    <button class="inner-tab" data-target="beforeafter">قبل/بعد</button>
+    <button class="inner-tab" data-target="steps">مراحل التطبيق</button>
+    <button class="inner-tab" data-target="extras">محاكاة القرار</button>
+  </div>
+
+  <!-- معلومات -->
+  <div id="info" class="dss-section active">
+    <div class="card">
+      <h3 class="card-title">📘 معلومات المادة والمجموعة</h3>
+      <div class="grid">
+        <div class="kv"><b>اسم المادة:</b> نظم دعم اتخاذ القرار</div>
+        <div class="kv"><b>اسم الدكتور:</b> محمد عوض الفضيل</div>
+        <div class="kv"><b>الطالب:</b> إبراهيم علي الشاوش</div>
+        <div class="kv"><b>الطالب:</b> أسامة محمد الصفي</div>
+        <div class="kv"><b>الطالب:</b> عبدالهادي فرج المري</div>
+        <div class="kv"><b>الطالب:</b> يوسف محمد الغرير</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">💡 فكرة المشروع</h3>
+      داخل شركة تقنية، واجهت مشاكل في الإنتاجية والتأخير في المشاريع. هدف المشروع هو تحليل تأثير تطبيق نظام دعم اتخاذ القرار (DSS)
+      على تحسين الأداء وتقليل المخاطر باستخدام التحليل والتنبؤ الذكي.
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div id="kpi" class="dss-section">
+    <div class="card">
+      <h3 class="card-title">📊 مؤشرات الأداء</h3>
+      <div class="grid">
+        <div class="kv"><b>انخفاض التأخير:</b> 40% → 20%</div>
+        <div class="kv"><b>زيادة الإنتاجية:</b> +18%</div>
+        <div class="kv"><b>تقليل الأخطاء:</b> -25%</div>
+        <div class="kv"><b>وقت القرار:</b> 3 ساعات → 10 دقائق</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- قبل بعد -->
+  <div id="beforeafter" class="dss-section">
+    <div class="card">
+      <h3 class="card-title">قبل / بعد تنفيذ DSS</h3>
+      <div class="grid">
+        <div class="kv">
+          <b>قبل:</b><br>
+          • تأخير شديد<br>
+          • توزيع مهام غير واضح<br>
+          • قرارات شخصية دون بيانات<br>
+          • ضعف في التواصل
+        </div>
+        <div class="kv">
+          <b>بعد:</b><br>
+          ✔ بيانات دقيقة<br>
+          ✔ توقع بالتأخير<br>
+          ✔ وضوح في المهام<br>
+          ✔ رفع الإنتاجية
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مراحل -->
+  <div id="steps" class="dss-section">
+    <div class="card">
+      <h3 class="card-title">🔄 مراحل تطبيق النظام</h3>
+      <ul style="line-height:1.9;">
+        <li>تحليل الوضع الحالي</li>
+        <li>اختيار نظام Analytical DSS</li>
+        <li>إدخال البيانات وتجربة النظام لمدة شهر</li>
+        <li>التطبيق الكامل في الشركة</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- إضافات / Decision Center -->
+  <div id="extras" class="dss-section">
+
+    <!-- Decision Simulator -->
+    <div class="card">
+      <h3 class="card-title">🧠 Decision Simulator – محاكاة القرار</h3>
+      <p>اختر أحد القرارات لتحليل تأثيره باستخدام DSS:</p>
+
+      <div class="grid">
+        <button class="kv" onclick="simulate('staff')">🔹 زيادة الموظفين</button>
+        <button class="kv" onclick="simulate('budget')">🔹 تقليل الميزانية</button>
+        <button class="kv" onclick="simulate('process')">🔹 تحسين العمليات</button>
+      </div>
+
+      <div id="sim-result" class="card" style="display:none; margin-top:15px; background:#E8F5E9;">
+        <h3 class="card-title">📌 نتيجة المحاكاة</h3>
+        <p id="sim-text" style="font-size:16px; line-height:1.8;"></p>
+      </div>
+    </div>
+
+    <!-- Matrix Comparison -->
+    <div class="card">
+      <h3 class="card-title">📊 Matrix Comparison – مقارنة الحلول</h3>
+      <table class="matrix-table">
+        <tr><th>الخيار</th><th>التكلفة</th><th>السرعة</th><th>الدقة</th><th>اختيار</th></tr>
+        <tr>
+          <td>A</td><td>⭐</td><td>⭐⭐⭐</td><td>⭐⭐</td>
+          <td><button onclick="chooseSolution('A')">اختر</button></td>
+        </tr>
+        <tr>
+          <td>B</td><td>⭐⭐⭐</td><td>⭐</td><td>⭐⭐⭐</td>
+          <td><button onclick="chooseSolution('B')">اختر</button></td>
+        </tr>
+        <tr>
+          <td>C</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐</td>
+          <td><button onclick="chooseSolution('C')">اختر</button></td>
+        </tr>
+      </table>
+
+      <div id="solution-box" class="card" style="display:none; margin-top:15px; background:#FFF3CD;">
+        <h3 class="card-title">🔍 التحليل المختار</h3>
+        <p id="solution-text" style="font-size:16px; line-height:1.8;"></p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<script>
+/* main tabs */
+const tabs=document.querySelectorAll('.tab');
+const sections=document.querySelectorAll('main section');
+tabs.forEach(t=>{
+  t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    sections.forEach(s=>s.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.target).classList.add('active');
+  });
+});
+
+/* inner tabs */
+const innerTabs=document.querySelectorAll('.inner-tab');
+const dssSec=document.querySelectorAll('.dss-section');
+
+innerTabs.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    innerTabs.forEach(b=>b.classList.remove('active'));
+    dssSec.forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.target).classList.add('active');
+  });
+});
+
+/* Decision Simulator Logic */
+function simulate(type){
+  const box=document.getElementById('sim-result');
+  const text=document.getElementById('sim-text');
+
+  box.style.display='block';
+  box.style.opacity=0;
+  setTimeout(()=>{ box.style.opacity=1; },50);
+
+  if(type === 'staff'){
+    text.innerHTML = `
+      ✔ رفع عدد الموظفين يحسّن الإنتاجية بنسبة <b>12%</b><br>
+      ✔ يقلل التأخير بنسبة <b>9%</b><br>
+      ✔ يقلل الأخطاء بنسبة <b>4%</b><br><br>
+      🌟 <b>التوصية:</b> القرار الأفضل عند ارتفاع ضغط العمل.
+    `;
+  }
+  else if(type === 'budget'){
+    text.innerHTML = `
+      ✔ تقليل الميزانية يخفض التكاليف<br>
+      ✘ ولكنه يرفع الأخطاء بنسبة <b>18%</b><br>
+      ✘ ويزيد احتمالية التأخير<br><br>
+      ⚠️ <b>التوصية:</b> غير مناسب إلا عند الضرورة.
+    `;
+  }
+  else if(type === 'process'){
+    text.innerHTML = `
+      ✔ تحسين العمليات يقلل الأخطاء بنسبة <b>25%</b><br>
+      ✔ يرفع كفاءة الفريق بنسبة <b>15%</b><br>
+      ✔ يجعل اتخاذ القرار أسرع<br><br>
+      🌟 <b>التوصية:</b> الأفضل على المدى الطويل.
+    `;
+  }
+}
+
+/* Matrix Choice Logic */
+function chooseSolution(option){
+  const box=document.getElementById('solution-box');
+  const text=document.getElementById('solution-text');
+
+  box.style.display="block";
+  box.style.opacity=0;
+  setTimeout(()=>{ box.style.opacity=1; },50);
+
+  if(option==='A'){
+    text.innerHTML = `
+      ✔ مناسب للسرعة والإنجاز السريع<br>
+      ✘ لكنه أقل دقة<br><br>
+      ⭐ <b>التوصية:</b> الأفضل للمشاريع الصغيرة.
+    `;
+  }
+  else if(option==='B'){
+    text.innerHTML = `
+      ✔ أعلى دقة بين الحلول<br>
+      ✔ مناسب للقرارات الإستراتيجية<br>
+      ✘ بطيء في التنفيذ<br><br>
+      🌟 <b>التوصية:</b> الحل الأفضل بشكل عام.
+    `;
+  }
+  else if(option==='C'){
+    text.innerHTML = `
+      ✔ توازن بين التكلفة والسرعة<br>
+      ✘ الدقة أقل من B<br><br>
+      ⭐ <b>التوصية:</b> مناسب عند محدودية الموارد.
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
